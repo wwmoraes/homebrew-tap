@@ -9,13 +9,9 @@ cask "displaylink-manager" do
 
   pkg "DisplayLink Manager Graphics Connectivity#{version}-EXE.pkg"
 
-  uninstall quit: "com.displaylink.DisplayLinkUserAgent",
-            launchctl: [
-              "com.displaylink.DisplayLinkLoginHelper",
-            ],
-            pkgutil:   [
-              "com.displaylink.displaylinkmanagerapp",
-            ]
+  uninstall quit:      "com.displaylink.DisplayLinkUserAgent",
+            launchctl: "com.displaylink.DisplayLinkLoginHelper",
+            pkgutil:   "com.displaylink.displaylinkmanagerapp"
 
   zap trash: [
     "~/Library/Application Scripts/com.displaylink.DisplayLink*",

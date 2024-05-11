@@ -9,10 +9,7 @@ cask "ykman" do
 
   pkg "yubikey-manager-qt-#{version}-mac.pkg"
 
-  uninstall quit: "com.yubico.ykman",
-            pkgutil:   [
-              "com.yubico.ykman",
-            ]
+  uninstall quit: "com.yubico.ykman", pkgutil: "com.yubico.ykman"
 
   zap trash: [
     "~/Library/Preferences/com.org-yubico.YubiKey Manager.plist",
